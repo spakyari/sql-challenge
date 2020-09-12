@@ -1,0 +1,43 @@
+departments
+-
+dept_no varchar pk 
+dept_name varchar
+
+
+titles
+-
+title_id varchar 
+title varchar pk
+
+employees
+-
+emp_no int pk
+emp_title varchar fk - titles.title
+birth_date date
+first_name varchar
+last_name varchar
+sex varchar
+hire_date varchar
+
+
+dept_emp
+-
+id serial pk
+emp_no int fk - employees.emp_no
+dept_no varchar fk - departments.dept_no
+
+
+dept_manager
+-
+id serial pk
+dept_no varchar fk - departments.dept_no
+emp_no int fk - employees.emp_no
+
+
+salaries
+-
+id serial pk
+emp_no int fk - employees.emp_no
+salary int
+
+
